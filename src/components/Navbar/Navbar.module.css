@@ -1,0 +1,29 @@
+.nav {
+    grid-area: n;
+    background: linear-gradient(20deg, rgb(2, 0, 0), #ee4d30a6);;
+    padding:20px;
+  }
+
+.item a {
+  color:white;
+  text-decoration: none;
+}
+
+.item a.activeLink {
+  color: rgb(20, 42, 141);
+}
+.item a:hover {
+  color: hotpink;
+}
+.item {
+  font-size: 20px;
+}
+
+.block {
+position:relative;
+top:40px;
+padding: 10px;
+background:linear-gradient(20deg, rgb(2, 0, 0), #f58e7c);;
+border: 2px solid;
+color:white;
+}

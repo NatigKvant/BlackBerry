@@ -1,0 +1,22 @@
+.postsBlock {
+    padding: 10px;
+    color:white;
+}
+
+.posts {
+    margin-top: 10px;
+}
+
+.input {
+    background: linear-gradient(160deg, rgb(68, 68, 68), #be7699);
+    left: 0;
+    border: 4px;
+    width: 20%;
+    padding: 30px;
+    outline: none;
+    font-weight: 300;
+    color:white;
+}
+.placeholder {
+    color:white;
+}
