@@ -3,8 +3,10 @@ import SidebarItem from './SidebarItem/SidebarItem';
 import s from './Sidebar.module.css';
 
 const Sidebar = (props) => {
+
+let state = props.store.getState().sidebarPage; 
   
-let sideBarElements = props.state.sidebarData.map(b => {
+let sideBarElements = state.sidebarData.map(b => {
   return <SidebarItem name={b.name} id={b.id} />
 });
 

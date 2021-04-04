@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import s from './Navbar.module.css';
 
 const Navbar = (props) => {
+  
   return (
     <nav className={s.nav}>
       <div className = {s.item}>
@@ -23,7 +24,7 @@ const Navbar = (props) => {
       </div>
       <div className = {s.block}>
         <h3>Friends</h3>
-        <Sidebar state={props.state.sidebarPage}/>
+        <Sidebar store={props.store} dispatch={props.dispatch}/>
         <div activeClassName={s.activeLink}></div>
       </div>
     </nav>
