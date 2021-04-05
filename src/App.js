@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router";
 import "./App.css";
-import Dialogs from "./components/Dialogs/Dialogs";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import HeaderBar from "./components/Header/HeaderBar";
 import About from "./components/Header/HeaderComponents/About";
@@ -12,18 +11,17 @@ import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 
-const App = (props) => {
+const App = () => {
 
   return (
    
       <div className="app-wrapper">
+        <div>Hello</div>
         <HeaderBar/>
-        <Navbar store ={props.store} dispatch={props.dispatch}/>
+        <Navbar />
         <div className="app-wrapper-content">
-          <Route  path="/dialogs" render={() => <DialogsContainer store={props.store}
-                                                         dispatch={props.dispatch}/>} />
-          <Route  path="/profile" render={() => <Profile store={props.store} 
-                                                         dispatch={props.dispatch}/>} />
+          <Route  path="/dialogs" render={() => <DialogsContainer />} />
+          <Route  path="/profile" render={() => <Profile />} />
           <Route  path="/news" component={News} />
           <Route  path="/music" component={Music} />
           <Route  path="/settings" component={Settings} />
@@ -32,7 +30,7 @@ const App = (props) => {
         </div>
       </div>
     
-  );
-};
+  )
+}
 
 export default App;

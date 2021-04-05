@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Sidebar from '../Sidebar/Sidebar';
+import SidebarContainer from '../Sidebar/SidebarContainer';
 import s from './Navbar.module.css';
 
-const Navbar = (props) => {
+const Navbar = () => {
   
   return (
     <nav className={s.nav}>
@@ -24,7 +24,7 @@ const Navbar = (props) => {
       </div>
       <div className = {s.block}>
         <h3>Friends</h3>
-        <Sidebar store={props.store} dispatch={props.dispatch}/>
+        <SidebarContainer />
         <div activeClassName={s.activeLink}></div>
       </div>
     </nav>
