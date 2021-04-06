@@ -1,9 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
-import StoreContext from '../../StoreContext';
 
 
-const SidebarContainer = () => {
+/* const SidebarContainer = () => {
 
   return <StoreContext.Consumer> 
       { store => {
@@ -17,5 +17,19 @@ const SidebarContainer = () => {
   
 }
 
-export default SidebarContainer;
+export default SidebarContainer; */
 
+let mapStateToProps = (state) => {
+  return {
+    sidebarData: state.sidebarPage.sidebarData
+  }
+}
+
+let mapDispatchToProps = (dispatch) => {
+  return {}
+} 
+
+
+const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+
+export default SidebarContainer;
