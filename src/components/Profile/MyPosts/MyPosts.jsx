@@ -6,7 +6,7 @@ const MyPosts = (props) => {
 
   let postsElements = props.postsData.map(p => {
     
-    return <Post message = {p.message} id={p.id} likesCount={p.likesCount}/>
+    return <Post message = {p.message} id={p.id} likesCount={p.likesCount} key={p.id}/>
   }); 
 
   let newPostText = props.newPostText

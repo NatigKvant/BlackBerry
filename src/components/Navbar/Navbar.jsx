@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className = {s.block}>
         <h3>Friends</h3>
         <SidebarContainer />
-        <div activeClassName={s.activeLink}></div>
+        <div className={s.activeLink}></div>
       </div>
     </nav>
  

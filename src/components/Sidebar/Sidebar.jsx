@@ -6,7 +6,7 @@ const Sidebar = (props) => {
 
   
 let sideBarElements = props.sidebarData.map(b => {
-  return <SidebarItem name={b.name} id={b.id} />
+  return <SidebarItem name={b.name} id={b.id} key={b.id} />
 });
 
   return (
