@@ -6,7 +6,7 @@ const SidebarItem = (props) => {
  let path = "/profile/" + props.id
   return (
     <div className={s.sidebar + ' ' + s.active}>
-          <img src='https://www.vokrug.tv/pic/news/5/f/c/2/rsz300x300_5fc2879465129c11d65749ab9e3db7cc.jpg' />  
+          <img src='https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png' />  
           <NavLink to ={path} activeClassName={s.activeLink}>{props.name}</NavLink> 
           </div>
   )
