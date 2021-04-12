@@ -9,7 +9,17 @@ let initialState = {
         {id: 3, message:'We are friends'},
         {id: 4, message:'nice to meet you'},
         {id: 5, message:'Next level'},
-        {id: 6, message:'Hi'}
+        {id: 6, message:'Hi'},
+        {id: 7, message:'Welcome'},
+        {id: 8, message:'Music is on'},
+        {id: 9, message:'Happy day'},
+        {id: 10, message:'nice car'},
+        {id: 11, message:'My way is open'},
+        {id: 12, message:'new home'},
+        {id: 13, message:'Like this'},
+        {id: 14, message:'well'},
+        {id: 15, message:'door is open'},
+        {id: 16, message:'movie'},
      ],
      newMessageText:'',
      dialogsData:[

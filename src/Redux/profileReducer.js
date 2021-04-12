@@ -5,7 +5,10 @@ let initialState = {
   
     postsData:[
         {id:1,message:'Hi, how are you?',likesCount:'15 likes'},
-        {id:2,message:'Its my new post',likesCount:'20 likes'}
+        {id:2,message:'Its my new post',likesCount:'20 likes'},
+        {id:3,message:'Look this post',likesCount:'15 likes'},
+        {id:4,message:'Looking for a job',likesCount:'8 likes'},
+        {id:5,message:'Reading posts',likesCount:'10 likes'},
        ],
     newPostText: ''
        
