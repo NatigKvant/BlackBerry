@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router";
 import "./App.css";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import HeaderBar from "./components/Header/HeaderBar";
+import HeaderBarContainer from "./components/Header/HeaderBarContainer";
 import About from "./components/Header/HeaderComponents/About";
 import Contacts from "./components/Header/HeaderComponents/Contacts";
 import Music from "./components/Music/Music";
@@ -17,7 +17,7 @@ const App = () => {
   return (
    
       <div className="app-wrapper">
-        <HeaderBar/>
+        <HeaderBarContainer/>
         <Navbar />
         <div className="app-wrapper-content">
           <Route  path="/dialogs" render={() => <DialogsContainer />} />
