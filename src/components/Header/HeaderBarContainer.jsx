@@ -4,17 +4,18 @@ import HeaderBar from './HeaderBar';
 import {toggleIsFetching,setAuthUserData} from '../../Redux/auth-reducer';
 import Preloader from '../common/Preloader/Preloader';
 import { connect } from 'react-redux';
+import { authMeAPI } from '../../api/api';
 
 class HeaderBarContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true)
-      axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
+      /* axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
           withCredentials: true
-      })
-      .then(response => {
+      }) */
+      authMeAPI.AuthMe().then(data => {
         this.props.toggleIsFetching(false)
-          if (response.data.resultCode === 0) {
-              let {id,email,login} = response.data.data;
+          if (data.resultCode === 0) {
+              let {id,email,login} = data.data;
               this.props.setAuthUserData(id, email, login);
           }
       });
