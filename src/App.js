@@ -5,6 +5,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import HeaderBarContainer from "./components/Header/HeaderBarContainer";
 import About from "./components/Header/HeaderComponents/About";
 import Contacts from "./components/Header/HeaderComponents/Contacts";
+import Login from "./components/Login/Login";
 import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -28,6 +29,7 @@ const App = () => {
           <Route  path="/settings" component={Settings} />
           <Route  path="/contacts" component={Contacts} />
           <Route  path="/about" component={About} />
+          <Route  path="/login" component={Login} />
         </div>
       </div>
     
