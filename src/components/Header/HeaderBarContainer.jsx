@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import HeaderBar from './HeaderBar';
-import {toggleIsFetching,setAuthUserData} from '../../Redux/auth-reducer';
+import {toggleIsFetching,getAuthUserData} from '../../Redux/auth-reducer';
 import Preloader from '../common/Preloader/Preloader';
 import { connect } from 'react-redux';
 import { authMeAPI } from '../../api/api';
@@ -12,19 +12,20 @@ class HeaderBarContainer extends React.Component {
       /* axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
           withCredentials: true
       }) */
-      authMeAPI.AuthMe().then(data => {
+      /* authMeAPI.AuthMe().then(data => {
         this.props.toggleIsFetching(false)
           if (data.resultCode === 0) {
               let {id,email,login} = data.data;
               this.props.setAuthUserData(id, email, login);
           }
-      });
+      }); */
+      this.props.getAuthUserData()
     }
 
     render() {
     return <>
         { this.props.isFetching ? <Preloader /> : null}
-        <HeaderBar {...this.props} />
+        <HeaderBar {...this.props}/>
         </>
     
   }
@@ -36,6 +37,6 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps,{
-    setAuthUserData,
+    getAuthUserData,
     toggleIsFetching
 })(HeaderBarContainer);

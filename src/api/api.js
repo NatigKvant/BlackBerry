@@ -15,28 +15,21 @@ export const usersAPI = {
             .then(response => {
                 return response.data;
             });
-      }
-}
-
-export const followAPI = {
-    Follow(u){
-        return instance.post(`follow/${u.id}`, {},)
-        .then(response => {
-            return response.data;
-        })
+      },
+      Follow(userId){
+        return instance.post(`follow/${userId}`, {},)
+        
+      },
+      unFollow(userId){
+        return instance.delete(`follow/${userId}`)
+        
+      },
+      getProfile(userId){
+        return instance.get(`profile/` + userId)
     }
 }
 
-export const unFollowAPI = {
-    unFollow(u){
-        return instance.delete(`follow/${u.id}`)
-        .then(response => {
-            return response.data;
-        })
-   }
-}
-
-export const authMeAPI = {
+export const authAPI = {
     AuthMe(){
         return instance.get(`auth/me`)
         .then(response => {
@@ -44,3 +37,4 @@ export const authMeAPI = {
         })
     }
 }
+//test api//
