@@ -1,10 +1,8 @@
-import axios from 'axios';
 import React from 'react';
 import HeaderBar from './HeaderBar';
 import {toggleIsFetching,getAuthUserData} from '../../Redux/auth-reducer';
 import Preloader from '../common/Preloader/Preloader';
 import { connect } from 'react-redux';
-import { authMeAPI } from '../../api/api';
 
 class HeaderBarContainer extends React.Component {
     componentDidMount() {
@@ -36,7 +34,9 @@ const mapStateToProps = (state) => ({
     login: state.auth.login
 })
 
+
 export default connect(mapStateToProps,{
     getAuthUserData,
     toggleIsFetching
 })(HeaderBarContainer);
+
