@@ -2,6 +2,7 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import LookingForAJob from '../../common/Preloader/lookingforajob';
+import ProfileStatus from './ProfileStatus';
 
 
 
@@ -19,6 +20,9 @@ const ProfileInfo = (props) => {
         <img src ={props.profile.photos.large} />
         <h1>{props.profile.fullName}</h1>
         <div> Status:
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+        </div>
+        <div> About Me:
         <h3>{props.profile.aboutMe}</h3>
         </div>
         <div>
