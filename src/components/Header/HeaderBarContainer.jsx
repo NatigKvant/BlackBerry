@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderBar from './HeaderBar';
-import {toggleIsFetching,getAuthUserData} from '../../Redux/auth-reducer';
+import {toggleIsFetching,getAuthUserData,logout} from '../../Redux/auth-reducer';
 import Preloader from '../common/Preloader/Preloader';
 import { connect } from 'react-redux';
 
@@ -37,6 +37,7 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps,{
     getAuthUserData,
-    toggleIsFetching
+    toggleIsFetching,
+    logout
 })(HeaderBarContainer);
 
