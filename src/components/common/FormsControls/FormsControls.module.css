@@ -1,0 +1,29 @@
+.dialogInput {
+    background: linear-gradient(160deg, rgb(68, 68, 68), #be7699);
+    left: 0;
+    border: 4px;
+    width: 150%;
+    padding: 30px;
+    outline: none;
+    font-weight: 300;
+    color:white;
+}
+
+.profileInput {
+    background: linear-gradient(160deg, rgb(68, 68, 68), #be7699);
+    left: 0;
+    border: 4px;
+    width: 20%;
+    padding: 30px;
+    outline: none;
+    font-weight: 300;
+    color:white;
+}
+
+.formControl.error input {
+    border: solid red 1px;
+}
+
+.formControl.error span {
+    color: red;
+}

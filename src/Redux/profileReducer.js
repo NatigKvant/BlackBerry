@@ -12,6 +12,8 @@ let initialState = {
         {id:3,message:'Look this post',likesCount:'15 likes'},
         {id:4,message:'Looking for a job',likesCount:'8 likes'},
         {id:5,message:'Reading posts',likesCount:'10 likes'},
+        {id:6,message:'I have a new car',likesCount:'17 likes'},
+        {id:7,message:'Welcome to the group',likesCount:'16 likes'},
        ],
     profile: null,
     status: ""
