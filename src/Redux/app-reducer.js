@@ -1,30 +1,26 @@
 import { authAPI } from "../api/api"
 import {stopSubmit} from "redux-form"
+import { getAuthUserData, setAuthUserData } from "./auth-reducer"
 
-const SET_USER_DATA = 'SET_USER_DATA'
-const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+const INITIALIZED_SUCCESS = "INITIALIZED_SUCCESS"
 
 let initialState = {
-  userId: null,
-  email: null,
-  login: null,
-  isFetching: false,
-  isAuth: false,
+  initialized: false
 }
 
 
-const authReducer = (state = initialState, action) => {
+const appReducer = (state = initialState, action) => {
    switch(action.type) {
-       case SET_USER_DATA:
+       case INITIALIZED_SUCCESS:
           return {
               ...state, 
-              ...action.payload,
+              initialized: true,
               
         }
         
-        case TOGGLE_IS_FETCHING: {
+        /* case TOGGLE_IS_FETCHING: {
           return { ...state, isFetching: action.isFetching }
-        }
+        } */
   
    default: 
        return state;
@@ -32,22 +28,17 @@ const authReducer = (state = initialState, action) => {
   }
 }
 
-export const setAuthUserData = (userId, email, login, isAuth) => ({type: SET_USER_DATA, payload: {userId, email, login, isAuth }})
-
-export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching })
+export const initializedSuccess = () => ({type: INITIALIZED_SUCCESS});
 
 
 //thunk
-export const getAuthUserData = () => (dispatch) => {
-  return authAPI.AuthMe().then(data => {
-      dispatch(toggleIsFetching(false))
-        if (data.resultCode === 0) {
-            let {id,email,login} = data.data;
-            dispatch(setAuthUserData(id, email, login, true));
-        }
-    });
-    }
-  
+export const initializeApp = () => (dispatch) => {
+    let promise = dispatch(getAuthUserData());
+    promise.then(() => {
+      dispatch(initializedSuccess());
+    })
+     
+  }
 
 export const login = (email,password,rememberMe) => (dispatch) => {
   
@@ -66,7 +57,6 @@ export const logout = () => {
   return (dispatch) => {
     authAPI.Logout()
     .then(response => {
-      dispatch(toggleIsFetching(false))
       if (response.data.resultCode === 0) {
         dispatch(setAuthUserData(null, null, null, false));
       }
@@ -74,4 +64,4 @@ export const logout = () => {
   }
 } 
 
-export default authReducer;
+export default appReducer;
