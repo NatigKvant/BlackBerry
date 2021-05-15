@@ -1,5 +1,4 @@
-import React, { createRef } from "react"
-import s from './ProfileInfo.module.css';
+import React from "react"
 
 class ProfileStatus extends React.Component {
     

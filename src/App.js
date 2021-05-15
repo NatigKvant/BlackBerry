@@ -13,7 +13,6 @@ import News from "./components/News/News";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
-import {getAuthUserData} from "../src/Redux/auth-reducer";
 import {initializeApp} from "../src/Redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 

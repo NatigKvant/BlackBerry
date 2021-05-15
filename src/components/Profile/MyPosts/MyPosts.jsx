@@ -5,7 +5,7 @@ import Post from './Post/Post';
 import { maxLengthCreator,required } from '../../../utils/validators/validators'
 import { profileTextarea } from '../../common/FormsControls/FormControls';
 
-const MyPosts = (props) => { 
+const MyPosts = React.memo(props => { 
 
   let postsElements = props.postsData.map(p => {
     
@@ -29,7 +29,9 @@ const MyPosts = (props) => {
   
 
   )
-}
+ }
+)
+
 
 const maxLength10 = maxLengthCreator(10);
 
