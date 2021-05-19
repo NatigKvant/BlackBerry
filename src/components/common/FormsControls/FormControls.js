@@ -1,4 +1,5 @@
 import React from 'react'
+import { Field } from 'redux-form';
 import s from './FormsControls.module.css'
 
 export const dialogsTextarea = ({input,meta,...props}) => {
@@ -40,5 +41,16 @@ export const Input = ({input,meta,...props}) => {
     )
 }
 
+export const createField = (placeholder, name, validators, component, props = {}, text = "") => (
+<div>
+    <Field placeholder={placeholder}
+           name={name} 
+           validate={validators}
+           component={component} 
+           className={s.login}
+           {...props}/> {text}
+</div>
+)
+    
 
 

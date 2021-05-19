@@ -1,7 +1,7 @@
 import { authAPI } from "../api/api"
 import {stopSubmit} from "redux-form"
 
-const SET_USER_DATA = 'SET_USER_DATA'
+const SET_USER_DATA = 'blackberry/auth/SET_USER_DATA'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 let initialState = {
@@ -38,40 +38,37 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
 
 
 //thunk
-export const getAuthUserData = () => (dispatch) => {
-  return authAPI.AuthMe().then(data => {
-      dispatch(toggleIsFetching(false))
-        if (data.resultCode === 0) {
-            let {id,email,login} = data.data;
-            dispatch(setAuthUserData(id, email, login, true));
-        }
-    });
-    }
+
+    export const getAuthUserData = () => async (dispatch) => {
+     let response = await authAPI.me();
+         if (response.data.resultCode === 0) {
+               let {id,email,login} = response.data.data;
+               dispatch(setAuthUserData(id, email, login, true));
+           }
+       }
+       
   
 
-export const login = (email,password,rememberMe) => (dispatch) => {
+export const login = (email,password,rememberMe) => async (dispatch) => {
   
-  authAPI.Login(email,password,rememberMe)
-    .then(response => {
+  let response = await authAPI.Login(email,password,rememberMe)
+    
       if (response.data.resultCode === 0) {
         dispatch(getAuthUserData())
       } else {
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some Error";
         dispatch(stopSubmit("login",{_error: message}));
       }
-    })
+    
 } 
 
-export const logout = () => {
-  return (dispatch) => {
-    authAPI.Logout()
-    .then(response => {
-      dispatch(toggleIsFetching(false))
+export const logout = () => async (dispatch) => {
+   let response = await authAPI.Logout()
+
       if (response.data.resultCode === 0) {
         dispatch(setAuthUserData(null, null, null, false));
-      }
-    })
   }
-} 
+}
+
 
 export default authReducer;

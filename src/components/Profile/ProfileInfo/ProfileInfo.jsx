@@ -7,8 +7,8 @@ import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({profile,status,updateStatus}) => {
+  if (!profile) {
     return <Preloader />
   }
   return (
@@ -17,28 +17,28 @@ const ProfileInfo = (props) => {
         <img /* src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' */ />
       </div>
       <div className = {s.descriptionBlock}>
-        <img src ={props.profile.photos.large} />
-        <h1>{props.profile.fullName}</h1>
+        <img src ={profile.photos.large} />
+        <h1>{profile.fullName}</h1>
         <div> Status:
-        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+        <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
         </div>
         <div> About Me:
-        <h3>{props.profile.aboutMe}</h3>
+        <h3>{profile.aboutMe}</h3>
         </div>
         <div>
          Contacts:
-        <h3>{props.profile.contacts.facebook}</h3>
-        <h3>{props.profile.contacts.website}</h3>
-        <h3>{props.profile.contacts.vk}</h3>
-        <h3>{props.profile.contacts.twitter}</h3>
-        <h3>{props.profile.contacts.instagram}</h3>
-        <h3>{props.profile.contacts.youtube}</h3>
-        <h3>{props.profile.contacts.github}</h3>
+        <h3>{profile.contacts.facebook}</h3>
+        <h3>{profile.contacts.website}</h3>
+        <h3>{profile.contacts.vk}</h3>
+        <h3>{profile.contacts.twitter}</h3>
+        <h3>{profile.contacts.instagram}</h3>
+        <h3>{profile.contacts.youtube}</h3>
+        <h3>{profile.contacts.github}</h3>
         </div>
-        <h3>{props.profile.contacts.mainLink}</h3>
+        <h3>{profile.contacts.mainLink}</h3>
         <div className={s.lookingForAJob}>
-        {props.profile.lookingForAJob ? <LookingForAJob /> : null}
-        <h3>{props.profile.lookingForAJobDescription}</h3>
+        {profile.lookingForAJob ? <LookingForAJob /> : null}
+        <h3>{profile.lookingForAJobDescription}</h3>
         </div>
         </div>
     </div>
