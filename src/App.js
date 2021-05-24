@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Route } from "react-router";
+import React, {Component} from "react";
+import { connect, Provider } from "react-redux";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import "./App.css";
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
@@ -15,6 +15,8 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import {initializeApp} from "../src/Redux/app-reducer";
+import store from "./Redux/redux-store";
+import {compose} from "redux";
 import Preloader from "./components/common/Preloader/Preloader";
 import { withSuspense } from "./hoc/withSuspense";
 
@@ -62,6 +64,16 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps ,{
-  initializeApp
-})(App);
+let AppContainer = compose(
+  withRouter,
+  connect(mapStateToProps, {initializeApp}))(App);
+
+  const BlackBerryJSApp = (props) => {
+    return <HashRouter >
+         <Provider store={store}>
+             <AppContainer />
+         </Provider>
+     </HashRouter>
+ }
+
+ export default BlackBerryJSApp;
