@@ -3,21 +3,31 @@ import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import LookingForAJob from '../../common/Preloader/lookingforajob';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
+import userPhoto from "../../../assets/images/user.png";
+import { PinDropSharp } from '@material-ui/icons';
 
 
-
-
-const ProfileInfo = ({profile,status,updateStatus}) => {
+const ProfileInfo = ({isOwner,profile,status,updateStatus,savePhoto}) => {
   if (!profile) {
     return <Preloader />
   }
+
+  const onMainPhotoSelected = (e) => {
+    if(e.target.files.length) {
+      savePhoto(e.target.files[0]);
+    }
+  }
+
   return (
     <div>
       <div>
         <img /* src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' */ />
       </div>
       <div className = {s.descriptionBlock}>
-        <img src ={profile.photos.large} />
+        <img src ={profile.photos.large || userPhoto} />
+        
+        {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+        
         <h1>{profile.fullName}</h1>
         <div> Status:
         <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
