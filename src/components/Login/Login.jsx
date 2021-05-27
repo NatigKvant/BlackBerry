@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form";
-import s from './Login.module.css';
+import { reduxForm } from "redux-form";
+import s from '../common/FormsControls/FormsControls.module.css';
 import {login} from '../../Redux/auth-reducer';
 import { Redirect } from "react-router";
 import { createField, Input } from '../common/FormsControls/FormControls';
@@ -20,7 +20,8 @@ const LoginForm = ({handleSubmit, error}) => {
                 
                 { error && <div className={s.formSummaryError}>
                 { error}
-                </div>}
+                </div>
+                }
                 <div>
                     <button>login</button>
                 </div>
