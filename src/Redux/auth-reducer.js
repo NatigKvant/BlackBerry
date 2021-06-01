@@ -1,8 +1,8 @@
-import { authAPI } from "../api/api"
+import { authAPI, securityAPI } from "../api/api"
 import {stopSubmit} from "redux-form"
 
 const SET_USER_DATA = 'blackberry/auth/SET_USER_DATA'
-const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS'
 
 let initialState = {
   userId: null,
@@ -10,21 +10,18 @@ let initialState = {
   login: null,
   isFetching: false,
   isAuth: false,
+  captchaUrl: null // if null,then captcha is not required
 }
 
 
 const authReducer = (state = initialState, action) => {
    switch(action.type) {
        case SET_USER_DATA:
+       case GET_CAPTCHA_URL_SUCCESS:
           return {
               ...state, 
-              ...action.payload,
-              
-        }
-        
-        case TOGGLE_IS_FETCHING: {
-          return { ...state, isFetching: action.isFetching }
-        }
+              ...action.payload
+            }
   
    default: 
        return state;
@@ -34,8 +31,7 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (userId, email, login, isAuth) => ({type: SET_USER_DATA, payload: {userId, email, login, isAuth }})
 
-export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching })
-
+export const getCaptchaUrlSuccess = (captchaUrl) => ({type: GET_CAPTCHA_URL_SUCCESS, payload: {captchaUrl}})
 
 //thunk
 
@@ -49,18 +45,32 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
        
   
 
-export const login = (email,password,rememberMe) => async (dispatch) => {
+export const login = (email,password,rememberMe, captcha) => async (dispatch) => {
   
-  let response = await authAPI.Login(email,password,rememberMe)
+  let response = await authAPI.Login(email,password,rememberMe, captcha)
     
       if (response.data.resultCode === 0) {
+        // success, get auth data
         dispatch(getAuthUserData())
       } else {
+        if (response.data.resultCode === 10) {
+          dispatch(getCaptchaUrl());
+        }
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some Error";
         dispatch(stopSubmit("login",{_error: message}));
       }
     
 } 
+
+export const getCaptchaUrl = () => async (dispatch) => {
+  
+  const response = await securityAPI.getCaptchaUrl();
+    const captchaUrl = response.data.url;
+     
+    dispatch(getCaptchaUrlSuccess(captchaUrl));
+}
+
+
 
 export const logout = () => async (dispatch) => {
    let response = await authAPI.Logout()
