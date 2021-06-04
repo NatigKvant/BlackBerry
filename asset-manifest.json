@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/BlackBerry/static/css/main.1a6f3f38.chunk.css",
+    "main.css": "/BlackBerry/static/css/main.39bcb738.chunk.css",
     "main.js": "/BlackBerry/static/js/main.f792b659.chunk.js",
     "main.js.map": "/BlackBerry/static/js/main.f792b659.chunk.js.map",
     "runtime-main.js": "/BlackBerry/static/js/runtime-main.3d3fc32b.js",
@@ -16,7 +16,7 @@
     "index.html": "/BlackBerry/index.html",
     "static/css/3.e9bbf0bf.chunk.css.map": "/BlackBerry/static/css/3.e9bbf0bf.chunk.css.map",
     "static/css/4.608f9197.chunk.css.map": "/BlackBerry/static/css/4.608f9197.chunk.css.map",
-    "static/css/main.1a6f3f38.chunk.css.map": "/BlackBerry/static/css/main.1a6f3f38.chunk.css.map",
+    "static/css/main.39bcb738.chunk.css.map": "/BlackBerry/static/css/main.39bcb738.chunk.css.map",
     "static/js/2.2da64a78.chunk.js.LICENSE.txt": "/BlackBerry/static/js/2.2da64a78.chunk.js.LICENSE.txt",
     "static/media/looking.a456f4db.jpeg": "/BlackBerry/static/media/looking.a456f4db.jpeg",
     "static/media/preloader.e075fe4c.svg": "/BlackBerry/static/media/preloader.e075fe4c.svg",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.3d3fc32b.js",
     "static/js/2.2da64a78.chunk.js",
-    "static/css/main.1a6f3f38.chunk.css",
+    "static/css/main.39bcb738.chunk.css",
     "static/js/main.f792b659.chunk.js"
   ]
 }
