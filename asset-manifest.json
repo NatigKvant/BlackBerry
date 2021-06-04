@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/BlackBerry/static/css/main.1a6f3f38.chunk.css",
-    "main.js": "/BlackBerry/static/js/main.cdd34971.chunk.js",
-    "main.js.map": "/BlackBerry/static/js/main.cdd34971.chunk.js.map",
+    "main.js": "/BlackBerry/static/js/main.41f967a5.chunk.js",
+    "main.js.map": "/BlackBerry/static/js/main.41f967a5.chunk.js.map",
     "runtime-main.js": "/BlackBerry/static/js/runtime-main.6fade8a7.js",
     "runtime-main.js.map": "/BlackBerry/static/js/runtime-main.6fade8a7.js.map",
     "static/js/2.2ac3b4d3.chunk.js": "/BlackBerry/static/js/2.2ac3b4d3.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.6fade8a7.js",
     "static/js/2.2ac3b4d3.chunk.js",
     "static/css/main.1a6f3f38.chunk.css",
-    "static/js/main.cdd34971.chunk.js"
+    "static/js/main.41f967a5.chunk.js"
   ]
 }
