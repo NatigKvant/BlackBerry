@@ -2,7 +2,7 @@ let initialState = {
   
     sidebarData: [
        {id: 1, name:'Andrew'},
-       {id: 2, name:'Natig'},
+       {id: 2, name:'John'},
        {id: 3, name:'Leona'},
  
     ],

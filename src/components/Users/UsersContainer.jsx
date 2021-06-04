@@ -57,5 +57,5 @@ export default compose(
     toggleFollowingProgress,
     requestUsers
     }),
-  withAuthRedirect
+  /* withAuthRedirect */
 )(UsersContainer)

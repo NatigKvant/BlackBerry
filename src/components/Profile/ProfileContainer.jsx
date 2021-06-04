@@ -13,7 +13,8 @@ refreshProfile() {
   if(!userId) {
     userId = this.props.authorizedUserId;
     if(!userId) {
-      this.props.history.push("/login")
+      /* this.props.history.push("/login") */
+      this.props.history.push("/profile/1781")
     }
   }
 
@@ -58,5 +59,5 @@ let mapStateToProps = (state) => ({
 export default compose(
   connect(mapStateToProps, { getUserProfile, getStatus,updateStatus,savePhoto,saveProfile }),
   withRouter,
-  withAuthRedirect,
+  /* withAuthRedirect, */
 )(ProfileContainer)
