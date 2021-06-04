@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { connect, Provider } from "react-redux";
-import {HashRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import "./App.css";
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
@@ -23,11 +23,22 @@ import { withSuspense } from "./hoc/withSuspense";
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer')); //Lazy Loading
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer')); //Lazy Loading
 
-class App extends React.Component {
+class App extends Component {
 
-  componentDidMount() {
+  catchAllUnhandledErrors = (reason, promise) => {
+    alert("Some Error Occured");
+    /* console.error(promiseRejectionEvent); */
+  }
+
+componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
 }
+
+componentWillUnmount() {
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+}
+
 
 render() {
   if(!this.props.initialized) {
@@ -40,6 +51,10 @@ render() {
         <HeaderBarContainer/>
         <Navbar />
         <div className="app-wrapper-content">
+        <Switch>
+          <Route  exact path="/" 
+                  render={() => <Redirect to={"/profile"}/>}/>
+
           <Route  path="/dialogs" 
                   render={withSuspense(DialogsContainer)}/>
 
@@ -53,6 +68,8 @@ render() {
           <Route  path="/contacts" component={Contacts} />
           <Route  path="/about" component={About} />
           <Route  path="/login" component={Login} />
+          <Route  path="*" render={() => <div>404 NOT FOUND</div>} />
+        </Switch>
         </div>
       </div>
     
