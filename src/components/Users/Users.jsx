@@ -2,11 +2,18 @@ import  React from 'react';
 import s from './Users.module.css';
 import Paginator from '../common/Paginator/Paginator';
 import User from './User';
+import SearchBarContainer from './SearchBar/SearchBarContainer';
 
 let Users = ({currentPage, totalUsersCount, pageSize, onPageChanged,usersData, ...props}) => {
 
     return <div className={s.users}>
-            <Paginator currentPage={currentPage} 
+      <SearchBarContainer currentPage={currentPage} 
+                       onPageChanged={onPageChanged}
+                       totalItemsCount={totalUsersCount}
+                       pageSize={pageSize}/>
+            
+            
+      <Paginator currentPage={currentPage} 
                        onPageChanged={onPageChanged}
                        totalItemsCount={totalUsersCount}
                        pageSize={pageSize}/>

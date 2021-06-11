@@ -1,20 +1,16 @@
-import React,{Component} from 'react';
-import s from "./Settings.module.css"
+import React from 'react'
 
 
-class Settings extends Component {
- 
-  render() {
+const Settings = () => {
 
   return (
-  <div>
+          <div>
+          
+          </div>
+        );
+  }
+    
+  
 
-    <div className = {s.settings} /* style ={{color: this.state.color}} */ >
-      
-    </div>
-  </div>
-  )
- }
-}
+
 export default Settings;
-

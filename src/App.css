@@ -12,8 +12,9 @@
 
 .app-wrapper-content {
     grid-area: c;
-    background: (330deg, #000, #f0a6ca);
+    background: (330deg, #000, #da6aa0);
     background: linear-gradient(-50deg, #000, #f0a6ca);
     overflow: hidden;
+    background-color: rgba(17, 0, 250, 0.74);
 }
 
