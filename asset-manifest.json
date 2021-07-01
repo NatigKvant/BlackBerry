@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/BlackBerry/static/css/main.5f927cd0.chunk.css",
-    "main.js": "/BlackBerry/static/js/main.2eb6872b.chunk.js",
-    "main.js.map": "/BlackBerry/static/js/main.2eb6872b.chunk.js.map",
-    "runtime-main.js": "/BlackBerry/static/js/runtime-main.39d4c9dc.js",
-    "runtime-main.js.map": "/BlackBerry/static/js/runtime-main.39d4c9dc.js.map",
-    "static/js/2.9ed19f60.chunk.js": "/BlackBerry/static/js/2.9ed19f60.chunk.js",
-    "static/js/2.9ed19f60.chunk.js.map": "/BlackBerry/static/js/2.9ed19f60.chunk.js.map",
+    "main.js": "/BlackBerry/static/js/main.aec55e53.chunk.js",
+    "main.js.map": "/BlackBerry/static/js/main.aec55e53.chunk.js.map",
+    "runtime-main.js": "/BlackBerry/static/js/runtime-main.dd09389a.js",
+    "runtime-main.js.map": "/BlackBerry/static/js/runtime-main.dd09389a.js.map",
+    "static/js/2.961e0666.chunk.js": "/BlackBerry/static/js/2.961e0666.chunk.js",
+    "static/js/2.961e0666.chunk.js.map": "/BlackBerry/static/js/2.961e0666.chunk.js.map",
     "static/css/3.e9bbf0bf.chunk.css": "/BlackBerry/static/css/3.e9bbf0bf.chunk.css",
-    "static/js/3.2b5614c4.chunk.js": "/BlackBerry/static/js/3.2b5614c4.chunk.js",
-    "static/js/3.2b5614c4.chunk.js.map": "/BlackBerry/static/js/3.2b5614c4.chunk.js.map",
+    "static/js/3.6f3d1a55.chunk.js": "/BlackBerry/static/js/3.6f3d1a55.chunk.js",
+    "static/js/3.6f3d1a55.chunk.js.map": "/BlackBerry/static/js/3.6f3d1a55.chunk.js.map",
     "static/css/4.608f9197.chunk.css": "/BlackBerry/static/css/4.608f9197.chunk.css",
-    "static/js/4.dffae4d5.chunk.js": "/BlackBerry/static/js/4.dffae4d5.chunk.js",
-    "static/js/4.dffae4d5.chunk.js.map": "/BlackBerry/static/js/4.dffae4d5.chunk.js.map",
+    "static/js/4.db08227d.chunk.js": "/BlackBerry/static/js/4.db08227d.chunk.js",
+    "static/js/4.db08227d.chunk.js.map": "/BlackBerry/static/js/4.db08227d.chunk.js.map",
     "index.html": "/BlackBerry/index.html",
     "static/css/3.e9bbf0bf.chunk.css.map": "/BlackBerry/static/css/3.e9bbf0bf.chunk.css.map",
     "static/css/4.608f9197.chunk.css.map": "/BlackBerry/static/css/4.608f9197.chunk.css.map",
     "static/css/main.5f927cd0.chunk.css.map": "/BlackBerry/static/css/main.5f927cd0.chunk.css.map",
-    "static/js/2.9ed19f60.chunk.js.LICENSE.txt": "/BlackBerry/static/js/2.9ed19f60.chunk.js.LICENSE.txt",
+    "static/js/2.961e0666.chunk.js.LICENSE.txt": "/BlackBerry/static/js/2.961e0666.chunk.js.LICENSE.txt",
     "static/media/looking.a456f4db.jpeg": "/BlackBerry/static/media/looking.a456f4db.jpeg",
     "static/media/preloader.e075fe4c.svg": "/BlackBerry/static/media/preloader.e075fe4c.svg",
     "static/media/user.png": "/BlackBerry/static/media/user.f7d6eb9b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.39d4c9dc.js",
-    "static/js/2.9ed19f60.chunk.js",
+    "static/js/runtime-main.dd09389a.js",
+    "static/js/2.961e0666.chunk.js",
     "static/css/main.5f927cd0.chunk.css",
-    "static/js/main.2eb6872b.chunk.js"
+    "static/js/main.aec55e53.chunk.js"
   ]
 }
