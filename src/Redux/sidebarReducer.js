@@ -1,9 +1,9 @@
 let initialState = {
   
     sidebarData: [
-       {id: 1, name:'Andrew'},
-       {id: 2, name:'John'},
-       {id: 3, name:'Leona'},
+       {id: 10, name:'Дмитрий'},
+       {id: 11, name:'Sol'},
+       {id: 14, name:'Den4ik'},
  
     ],
  };

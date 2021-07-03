@@ -5,7 +5,10 @@ import SearchBar from './SearchBar';
 import UserSetter from './UserSetter';
 import s from '../Users.module.css';
 import Paginator from '../../common/Paginator/Paginator';
-
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { requestUsers,setCurrentPage, toggleFollowingProgress} from '../../../Redux/usersReducer';
+import { getCurrentPage, getPageSize, getTotalUsersCount, getIsFetching, getFollowingInProgress, getUsers } from '../../../Redux/users-selectors';
 
 const customStyles = {
   content : {
@@ -40,9 +43,16 @@ class SearchBarContainer extends React.Component {
     this.closeModal = this.closeModal.bind(this);
 }
 
+
 getData = () => {
-      fetch("https://social-network.samuraijs.com/api/1.0/users")
-        .then(res => res.json())
+      fetch("https://social-network.samuraijs.com/api/1.0/users", {
+        method: 'get',
+        withCredentials: true,
+        headers: {
+          "API-KEY" : "7470744c-b0c9-4f19-8251-815a8819bbdf"
+      }
+      })
+      .then(res => res.json())
         .then(
           (result) => {
             this.setState({
@@ -57,8 +67,17 @@ getData = () => {
             });
           }
         )
-};
+}
 
+
+
+/* componentDidMount() {
+this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+}
+
+onPageChanged = (pageNumber) => {
+  this.props.requestUsers(pageNumber, this.props.pageSize);
+} */
 
 handleInputChange = event => {
       const query = event.target.value;
@@ -149,4 +168,23 @@ handleInputChange = event => {
  }
 }
 
-export default SearchBarContainer;
+let mapStateToProps = (state) => {
+
+  return {
+  usersData: getUsers(state),
+  pageSize: getPageSize(state),
+  totalUsersCount: getTotalUsersCount(state),
+  currentPage: getCurrentPage(state),
+  isFetching: getIsFetching(state),
+  followingInProgress: getFollowingInProgress(state)
+  }
+}
+
+export default compose(
+  connect(mapStateToProps,{
+    setCurrentPage,
+    toggleFollowingProgress,
+    requestUsers
+    }),
+  /* withAuthRedirect */
+)(SearchBarContainer)

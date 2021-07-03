@@ -75,9 +75,7 @@ const SearchBar = ({handleInputChange}) => {
          
           
         </Toolbar>
-
-        
-             
+       
     )
  }
 
