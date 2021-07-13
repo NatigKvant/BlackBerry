@@ -29,7 +29,7 @@ const profileReducer = (state = initialState, action) => {
     switch(action.type) {
       case ADD_POST: {
         let newPost = {
-          id: 5,
+          id: 8,
           message: action.newPostText,
           likesCount: 0
         };
@@ -39,6 +39,13 @@ const profileReducer = (state = initialState, action) => {
         };
       }
       
+      case DELETE_POST: {
+        return {
+          ...state,
+          postsData: state.postsData.filter(p => p.id !== action.id),
+        };
+      }
+            
       case SET_USER_PROFILE: {
         return {
           ...state,
@@ -55,12 +62,7 @@ const profileReducer = (state = initialState, action) => {
         }
         
       }
-      case DELETE_POST: {
-        return {
-          ...state,
-          postsData: state.postsData.filter(p => p.id != action.postId)
-        }
-      }
+      
       case SAVE_PHOTO_SUCCESS: {
         return {
           ...state,
@@ -79,7 +81,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
 export const setStatus = (status) => ({type: SET_STATUS, status})
 
-export const deletePost = (postId) => ({type: DELETE_POST, postId})
+export const deletePostActionCreator = (id) => ({type: DELETE_POST, id})
 
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
 

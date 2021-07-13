@@ -23,8 +23,6 @@ const HeaderBar = (props) => {
                 
             </div>
             </div>
-            {/* <SearchBarContainer /> */}
- 
         </header>
         
         

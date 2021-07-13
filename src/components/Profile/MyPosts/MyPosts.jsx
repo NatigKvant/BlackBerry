@@ -5,16 +5,16 @@ import Post from './Post/Post';
 import { maxLengthCreator,required } from '../../../utils/validators/validators'
 import { profileTextarea } from '../../common/FormsControls/FormControls';
 
-const MyPosts = React.memo(props => { 
+const MyPosts = ({id, deletePost, postsData, addPost}) => { 
 
-  let postsElements = props.postsData.map(p => {
+  let postsElements = postsData.map(p => {
     
-    return <Post message = {p.message} id={p.id} likesCount={p.likesCount} key={p.id}/>
+    return <Post message = {p.message} deletePost={deletePost} id={p.id} likesCount={p.likesCount} key={p.id}/>
   }); 
 
 
   let addNewPost = (values) => {
-    props.addPost(values.newPostText);
+    addPost(values.newPostText);
   }
 
   return (
@@ -30,12 +30,12 @@ const MyPosts = React.memo(props => {
 
   )
  }
-)
+
 
 
 const maxLength10 = maxLengthCreator(10);
 
-const MyPostsForm = (props) => {
+const MyPostsForm = ({deletePost, id,  ...props}) => {
     return (
       <form onSubmit={props.handleSubmit}>
       <div>
@@ -46,6 +46,7 @@ const MyPostsForm = (props) => {
                placeholder="Add Post" />
         </div>
         <button>Add Post</button>
+        
       </form>
     )
 }
